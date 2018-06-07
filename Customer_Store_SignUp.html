@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" , initial-scale="1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/nav-tabs.css">
+  <link rel="stylesheet" href="css/customer.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  
+  
+  <script src='http://code.jquery.com/jquery-3.1.1.min.js'></script>
+  <script src='js/bootstrap.js'></script>
+  <title>고객센터-점포가입신청</title>
+</head>
+
+<style>
+ 
+    /*폼 그룹 사이 벌려주는 것 (마진-바텀값으로 조절가능)*/
+    .form-horizontal .form-group{
+      margin-bottom: 40px;
+    }
+
+
+
+</style>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container-fluid navbar-background-color">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+        <div class="logo">
+          <a class="navbar-brand" href="Main.html">HOME</a>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-background-color" id='bs-example-navbar-collapse-1'>
+        <ul class="nav navbar-nav">
+          <li><a href="Intro.html">소개<span class-'sr-only'></span></a></li>
+          <li><a href="Store.html">STORE</a></li>
+          <li><a href="Event.html">EVENT</a></li>
+          <li><a href="Customer.html">고객센터</a></li>
+        </ul>
+
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <select class="form-control" name="">
+              <option value="">지역명</option>
+              <option value="">음식명</option>
+              <option value="">상호명</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="음식명/상호명을 입력하세요">
+          </div>
+          <button type="submit" class="btn btn-default">검색</button>
+        </form>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="Join.html"><span class="glyphicon glyphicon-user"></span>회원가입</a></li>
+          <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span>로그인</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  
+  <section>
+        <div class='container'>
+            <div class="panel">
+      
+                <ul class="nav nav-tabs">
+                  <li  role="presentation"><a href="Customer.html">공지사항</a></li>
+                  <li  role="presentation"><a href="Customer_FAQ.html">자주묻는 질문</a></li>
+                  <li role="presentation"><a href="Customer_One.html">1대1문의</a></li>
+                  <li class="active" role="presentation"><a href="Customer_Store_SignUp.html">점포가입신청</a></li>
+                </ul>
+      
+              
+                <div class="panel-body">
+                            <div class="page-header">
+                                <h2>점포 가입 신청</h2>
+                            </div>
+                              <form class="form-horizontal">
+                        
+                                <div class="form-group">
+                                  <label class="col-sm-3 control-label" for="">사업자 번호</label>
+                                <div class="col-sm-6">
+                                  <input class="form-control" type="text" placeholder="사업자 번호">
+                                </div>
+                                </div>
+                        
+                        
+                              <div class="form-group">
+                                <label class="col-sm-3 control-label" for="">대표자 이름</label>
+                              <div class="col-sm-6">
+                                <input class="form-control" type="text" placeholder="대표자 이름">
+                              </div>
+                              </div>
+    
+                             
+                              <div class="form-group">
+                                  <label class="col-sm-3 control-label" for="">상호명</label>
+                                <div class="col-sm-6">
+                                  <input class="form-control" type="text" placeholder="상호명">
+                                </div>
+                              </div>
+                        
+                              <div class="form-group">
+                                  <label class="col-sm-3 control-label" for="">휴대폰번호</label>
+                                <div class="col-sm-6">
+                                  <input class="form-control" type="text" placeholder="- 없이 입력해 주세요">
+                                </div>
+                              </div>
+    
+                               <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="">업종 카테고리</label>
+                                    <div class="col-sm-6">
+                                           
+                                                    <select class="form-control">
+                                                        <option>한식</option>
+                                                        <option>양식</option>
+                                                        <option>중식</option>
+                                                        <option>중식(일식,아시아식,디저트류)</option>
+                                                    </select>   
+                                           
+                                    </div>
+                               </div>
+                               <br>
+                               <br>
+            
+                               <div class="form-group">
+                                    <div class="col-sm-12 text-center">
+                                      <button class="btn btn-primary" type="submit">신청서 제출<i class="fa fa-check spaceLeft"></i></button>
+                                      <button class="btn btn-danger" type="reset">취소<i class="fa fa-times spaceLeft"></i></button>
+                                    </div>
+                                  </div>
+                           
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+     <!-- Footer -->
+     <footer id="footer" class="container">
+      <div class="row 200%">
+        <div class="12u">
+          <!-- Contact -->
+          <section>
+            <h2 class="major"><span>Get in touch</span></h2>
+            <ul class="contact">
+              <li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
+              <li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+              <li><a class="icon fa-instagram" href="#"><span class="label">Instagram</span></a></li>
+              <li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+              <li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul class="menu">
+          <li>&copy; Untitled. All rights reserved</li>
+          <li>Design by: semiproject</li>
+        </ul>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

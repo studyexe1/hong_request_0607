@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/carousel.css">
+ 
+
+  <script src='http://code.jquery.com/jquery-3.1.1.min.js'></script>
+  <script src='js/bootstrap.js'></script>
+  <script src='js/main.js'></script>
+  <style>
+   
+   .img-responsive{
+      height: 100px;
+    }
+
+  </style>
+
+
+    <title>메인화면-점주</title>
+</head>
+<body>
+    
+  <nav class="navbar ">
+    <div class="container-fluid navbar-background-color">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+        <div class="logo">
+          <a class="navbar-brand" href="Main.html">HOME</a>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-background-color" id='bs-example-navbar-collapse-1'>
+        <ul class="nav navbar-nav">
+          <li><a href="Intro.html">소개<span class-'sr-only'></span></a></li>
+          <li><a href="Store.html">STORE</a></li>
+          <li><a href="Event.html">EVENT</a></li>
+          <li><a href="Customer.html">고객센터</a></li>
+          <li><a href="MyPage_Event.html">마이페이지</a></li>
+          <li><a href="StoreManagement_Menu.html">점포관리</a></li>
+        </ul>
+
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <select class="form-control" name="">
+              <option value="">지역명</option>
+              <option value="">음식명</option>
+              <option value="">상호명</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="음식명/상호명을 입력하세요">
+          </div>
+          <button type="submit" class="btn btn-default">검색</button>
+        </form>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="Main.html"><span class="glyphicon glyphicon-log-in"></span>로그아웃</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+ 
+  <section>
+   <!-- 캐러셀 -->
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="images/mainphoto1.jpg" alt="" width="100%">
+      </div>
+
+      <div class="item">
+        <img src="images/mainphoto2.jpg" alt="" width="100%">
+      </div>
+
+      <div class="item">
+        <img src="images/mainphoto3.jpg" alt="" width="100%">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+  <!--캐러셀스크립트 -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#myCarousel').carousel({
+        interval: 3000,
+      })
+    });
+  </script>
+
+  <section>
+    <div class="container">
+      <div class="row" id='row_padding'>
+        <div class="col-md-5">
+          <p>홈><span>(지역 입력)</span>지역에 총<span>(검색된수 입력)</span>개의 푸드트럭이 검색</p>
+        </div>
+        <div class="col-md-7">
+          <div class="form-group nav navbar-nav">
+            <select class="form-control" id="sel1">
+                                   <option>추천순</option>
+                                   <option>영업순</option>
+                                   <option>리뷰순</option>
+                                   <option>이벤트순</option>
+              </select>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">현재위치</span>
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <ul class='store_ul'>
+          <!--클릭리스너 만들기-->
+          <li class='store_list'>
+            <div class="col-sm-6 col-md-4 padding">
+              <div class="thumbnail thumnail-botton">
+                <div class="col-xs-12">
+                    <br>
+                </div>
+
+                <div class="col-xs-8" align="left">
+                    <span class='truck_name'>점포명</span>
+                </div>
+                <div class="col-xs-4">
+                  <!--고정값으로 할수있는 checkd찾기-->
+                  <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                <label class="onoffswitch-label" for="myonoffswitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                  </label>
+                  <!--클릭이벤트제거-->
+            </div>
+                    <!--고정값으로 할수있는 checkd찾기-->
+
+                </div>
+                <div class="col-xs-5">
+                  <br>
+                  <img src="http://proxyprivat.com/images/noimage.jpeg" alt="" class='img_size'>
+                </div>
+                <div class="col-xs-7">
+                  <br>
+                  <p>주소</p>
+                  <p>평점</p>
+                  <p>평균금액</p>
+                </div>
+                <div class='col-xs-4'></div>
+                <div class='col-xs-4'></div>
+                <div class='col-xs-4'></div>
+                <!--지우지마셈 꺠짐-->
+                <div>
+                  <a>&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </section>
+  <script>
+
+
+      //on/off스위치
+      $("#myonoffswitch").on('click', function(e) {
+          e.preventDefault();
+        })
+        // 눌럿을떄 바로 이동
+        $(".store_list").click(function() {
+            location.href="FoodTruck_Menu.html";
+        });
+      
+      </script>
+
+
+     <!-- Footer -->
+     <footer id="footer" class="container">
+      <div class="row 200%">
+        <div class="12u">
+          <!-- Contact -->
+          <section>
+            <h2 class="major"><span>Get in touch</span></h2>
+            <ul class="contact">
+              <li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
+              <li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+              <li><a class="icon fa-instagram" href="#"><span class="label">Instagram</span></a></li>
+              <li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+              <li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul class="menu">
+          <li>&copy; Untitled. All rights reserved</li>
+          <li>Design by: semiproject</li>
+        </ul>
+      </div>
+    </footer>
+ 
+
+</body>
+</html>

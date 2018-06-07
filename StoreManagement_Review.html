@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/customer.css">
+    <link rel="stylesheet" href="css/footer.css">
+  
+    
+    
+    <script src='http://code.jquery.com/jquery-3.1.1.min.js'></script>
+    <script src='js/bootstrap.js'></script>
+
+        
+  <style>
+      /*푸드트럭정보*/
+      .table1 .foodinfor {
+        width: 50%;
+      }
+      .truck-panel-header {
+        text-align: center;
+        font-weight: bold;
+        font-size: 13pt;
+      }
+      .panel-1 {
+        /*기본정보*/
+        text-align: center;
+      }
+      .panel-2 {
+        /*메뉴 리뷰 이벤*/
+        text-align: center;
+      }
+      .panel-2-body-font {
+        font-size: 12pt;
+        font-weight: bold;
+      }
+      #truck-title-p {
+        font-size: 15pt;
+        font-weight: bold;
+      }
+      #basic-input {
+        display: inline-block;
+        width: 60%;
+      }
+      .truck-basic-font {
+        font-size: 13pt;
+      }
+      .truck-basic-font-bold {
+        font-weight: bold;
+      }
+      .icon {
+        color: blue;
+        font-size: 15px;
+        /*추후수정*/
+      }
+      /*스위치*/
+      .onoffswitch {
+        position: relative;
+        width: 55px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
+      .onoffswitch-checkbox {
+        display: none;
+      }
+      .onoffswitch-label {
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid #999999;
+        border-radius: 20px;
+      }
+      .onoffswitch-inner {
+        display: block;
+        width: 200%;
+        margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+      }
+      .onoffswitch-inner:before,
+      .onoffswitch-inner:after {
+        display: block;
+        float: left;
+        width: 50%;
+        height: 16px;
+        padding: 0;
+        line-height: 16px;
+        font-size: 10px;
+        color: white;
+        font-family: Trebuchet, Arial, sans-serif;
+        font-weight: bold;
+        box-sizing: border-box;
+      }
+      .onoffswitch-inner:before {
+        content: "ON";
+        padding-left: 12px;
+        background-color: green;
+        color: #FFFFFF;
+      }
+      .onoffswitch-inner:after {
+        content: "OFF";
+        padding-right: 12px;
+        background-color: #EEEEEE;
+        color: #999999;
+        text-align: right;
+      }
+      .onoffswitch-switch {
+        display: block;
+        width: 13px;
+        margin: 1.5px;
+        background: #FFFFFF;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 35px;
+        border: 2px solid #999999;
+        border-radius: 20px;
+        transition: all 0.3s ease-in 0s;
+      }
+      .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+      }
+      .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+        right: 0px;
+      }
+      /*스위치*/
+      /*별입력*/
+      .rating {
+        display: inline-block;
+        position: relative;
+        height: 50px;
+        line-height: 50px;
+        font-size: 50px;
+      }
+      .rating label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        cursor: pointer;
+      }
+      .rating label:last-child {
+        position: static;
+      }
+      .rating label:nth-child(1) {
+        z-index: 5;
+      }
+      .rating label:nth-child(2) {
+        z-index: 4;
+      }
+      .rating label:nth-child(3) {
+        z-index: 3;
+      }
+      .rating label:nth-child(4) {
+        z-index: 2;
+      }
+      .rating label:nth-child(5) {
+        z-index: 1;
+      }
+      .rating label input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+      .rating label .icon {
+        float: left;
+        color: transparent;
+      }
+      .rating label:last-child .icon {
+        color: #000;
+      }
+      .rating:not(:hover) label input:checked~.icon,
+      .rating:hover label:hover input~.icon {
+        color: #09f;
+      }
+      .rating label input:focus:not(:checked)~.icon:last-child {
+        color: #000;
+        text-shadow: 0 0 5px #09f;
+      }
+      /*별입력 끝*/
+      /*푸드트럭 메인사진파일 버튼으로올리기*/
+      #truck-input-img {
+        position: relative;
+        width: 94%;
+        cursor: pointer;
+        display: inline;
+        margin: 0;
+      }
+      .upload {
+        width: 94%;
+        opacity: 0;
+        position: relative;
+        display: inline;
+      }
+      .truck-img-replace {
+        display: inline-block;
+        position: absolute;
+        width: 87%;
+        height: 20;
+        border-radius: 3px;
+        border-color: transparent;
+        background: green;
+        color: #fff;
+        cursor: pointer;
+      }
+      .truck-check-img {
+        margin: 0px;
+      }
+      .menu-body {
+        text-align: center;
+      }
+      .view-menu {
+        margin-bottom: 5px;
+      }
+      .basic-btn {
+        background: green;
+      }
+      .result-btn {
+        width: 90px;
+        border-radius: 3px;
+        border-color: transparent;
+        background: green;
+      }
+      .result-btn-positon {
+        text-align: center;
+      }
+      
+      /*푸드트럭 메인사진파일 버튼으로올리기*/
+      /*대댓글*/
+      #textarea-reply {
+        resize: none;
+        padding-bottom: 100px;
+      }
+      .btn-reply,
+      .btn-cancel {
+        display: none;
+      }
+      li#comment-list:hover button.btn-reply {
+        display: inline;
+      }
+      li#comment-list:hover button.btn-cancel {
+        display: inline;
+      }
+      /*작아졌을떄*/
+      @media(max-width:1199px) {
+        /*해상도가 작을 때 드랍다운 아이템에 마우스를 올렸을때*/
+        .menu-check-img {
+          width: 110%;
+        }
+        .truck-img-replace {
+          width: 84%;
+        }
+        .menu-check-img {
+          width: 120%;
+        }
+        .menu-img-replace {
+          width: 93%;
+        }
+      }
+      @media(max-width:991px) {
+        /*해상도가 작을 때 드랍다운 아이템에 마우스를 올렸을때*/
+        .truck-img-replace {
+          width: 100%;
+          height: 20;
+        }
+        .truck-img-replace {
+          width: 96%;
+        }
+        #truck-check-img {
+          height: 200px;
+        }
+        .menu-check-img {
+          width: 110%;
+        }
+        .menu-img-replace {
+          width: 92%;
+        }
+      }
+      @media(max-width:700px) {
+        /*세부적 해도되고 안해도됨*/
+      }
+      @media(max-width:480px) {
+        /*해상도가 작을 때 드랍다운 아이템에 마우스를 올렸을때*/
+        .truck-img-replace {
+          width: 94%;
+          height: 20;
+        }
+        .menu-img-replace {
+          width: 90%;
+        }
+        .menu-check-img {
+          width: 122%;
+        }
+        #truck-check-img {
+          height: 200px;
+        }
+      }
+      /*테스트*/
+      .file {
+        width: 0;
+        height: 0;
+      }
+    </style>
+
+    <title>점포관리 리뷰</title>
+</head>
+<body>
+    
+  <nav class="navbar ">
+    <div class="container-fluid navbar-background-color">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+        <div class="logo">
+          <a class="navbar-brand" href="Main.html">HOME</a>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-background-color" id='bs-example-navbar-collapse-1'>
+        <ul class="nav navbar-nav">
+          <li><a href="Intro.html">소개<span class-'sr-only'></span></a></li>
+          <li><a href="Store.html">STORE</a></li>
+          <li><a href="Event.html">EVENT</a></li>
+          <li><a href="Customer.html">고객센터</a></li>
+          <li><a href="MyPage_Event.html">마이페이지</a></li>
+          <li><a href="StoreManagement_Menu.html">점포관리</a></li>
+        </ul>
+
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <select class="form-control" name="">
+              <option value="">지역명</option>
+              <option value="">음식명</option>
+              <option value="">상호명</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="음식명/상호명을 입력하세요">
+          </div>
+          <button type="submit" class="btn btn-default">검색</button>
+        </form>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="Main.html"><span class="glyphicon glyphicon-log-in"></span>로그아웃</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <section>
+      <div class="container">
+  
+        <div class='row'>
+          <div class="col-md-7 ">
+            <div class="panel-group">
+  
+              <div class='row'>
+                <div class='panel panel-default'>
+                  <div class='panel-heading'>
+                    <h3 class='panel-title truck-panel-header'>기본정보</h3>
+                  </div>
+                  <div class='panel-body pannel-basic'>
+                    <form name=form1="" action="#" method="get">
+  
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div align="center">
+                            <input id="basic-input" type="text" name="truck-name" value="" placeholder="점포명" class="form-control">
+                          </div>
+                          <br>
+                          <!-- <div class='col-md-3-body-center'> -->
+  
+                          <img id='truck-check-img' src="http://proxyprivat.com/images/noimage.jpeg" alt="Card image cap" width=100% height=100>
+                          <br>
+  
+                          <div class="">
+  
+                          </div>
+                          <button class="truck-img-replace">사진등록</button>
+                          <input id='truck-input-img' type="file" value="사진등록" class="upload" accept="image/gif, image/jpeg, image/png" name='truck-img'>
+  
+                          <br>
+                          <br>
+                        </div>
+  
+                        <div class="col-md-6">
+                          <p class='truck-basic-font'>경기도구리시등등id입력</p>
+                          <span class='truck-basic-font'>평점:</span>
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                          <span class="icon">★ name부여</span>
+                          <!--갯수를 입력받아야함.-->
+                          <br>
+                          <span class='truck-basic-font'>최소금액:&nbsp;</span><input id="basic-input" type="text" name="min_price" value="" placeholder="ex)2000원~" size="10" class="form-control">
+                          <br><br>
+                          <p class='truck-basic-font'>사업자정보</p>
+                          <span class='truck-basic-font'>상호명: <span class='truck-basic-font'>상호명뿌려줌 id부여</span></span>
+                          <br>
+                          <span class='truck-basic-font'>사업자등록번호:<span class='truck-basic-font'>등록번호뿌려줌 id부여</span></span>
+  
+                        </div>
+  
+                        <div class="col-md-2" align="center">
+                          <br>
+                          <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                            <label class="onoffswitch-label" for="myonoffswitch" align="left">
+                                <span class="onoffswitch-inner"></span>
+                                <span class="onoffswitch-switch"></span>
+                              </label>
+                            <!--클릭이벤트제거-->
+                          </div>
+                        </div>
+  
+                      </div>
+                      <div align="center">
+                        <br>
+                        <button class="btn btn-success basic-btn" type="submit">완료</button>
+                        <button class="btn btn-success basic-btn reset-button" type="reset">취소</button>
+                      </div>
+                  </div>
+  
+                  </form>
+                </div>
+              </div>
+  
+              <br>
+              <br>
+  
+  
+              <div class="row">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <ul class="nav nav-pills nav-justified">
+                        <li role="presentation"><a class='truck-panel-header' href="StoreManagement_Menu.html">메뉴</a></li>
+                        <li role="presentation"><a class='truck-panel-header' href="StoreManagement_Review.html">리뷰</a></li>
+                        <li role="presentation"><a class='truck-panel-header' href="StoreManagement_Event.html">이벤트</a></li>
+                        <li role="presentation"><a class='truck-panel-header' href="StoreManagement_Question.html">관리자문의</a></li>
+                      </ul>
+                    </div>
+                  </div>
+  
+  
+                  <div class="panel-body">
+                    <ul id='comment-main' style=list-style:none;>
+                      <li id='comment-list' class="leve1">
+                        <!--댓글보기-->
+                        <form>
+                          <!--form클래스 아이디부여-->
+                          <div class='row'>
+                            <div class="col-xs-9">
+                              <div class="row">
+                                <div class="col-md-6 ">
+  
+                                  <span class='panel-2-body-font'>아이디:</span> <span class='span-right-padding'>jazhong11111111111</span>
+                                  <!--아이디부여-->
+                                </div>
+                                <div class="col-md-6 date-padding">
+  
+  
+                                  <span class='panel-2-body-font'>작성날짜:</span>
+                                  <span>2012/12/11</span><br>
+                                  <!--date 부여 -->
+                                </div>
+                              </div>
+  
+                              <span class="rating">
+                            <label>
+  
+                                    <span class="icon">★</span>
+                              </label>
+                              <label>
+  
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                            </label>
+  
+                              <label>
+  
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                            </label>
+                              <label>
+  
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                            </label>
+  
+                              <label>
+  
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                          </label>
+                              </span>
+                              <br>
+                              <div class="row">
+                                <div class="col-xs-12">
+                                  <pre class="view-comment">입력받은 댓글</pre>
+                                  <button type="button" class="btn btn-success btn-reply basic-btn">답글</button>
+                                  <button type="button" class="btn btn-success btn-cancel basic-btn">취소</button>
+                                </div>
+                              </div>
+  
+                            </div>
+                            <div class='col-xs-3 col-md-3-body-center'>
+                              <img class='comment-check-img' src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg" alt="Card image cap" width=90% height=100%><br>
+                            </div>
+                          </div>
+                          <hr>
+                        </form>
+                      </li>
+                      <!-- <li id='comment-reply'>
+                        <form class="" action="#" method="post">
+                          <div class="col-xs-12">
+                            ↴<textarea id="textarea-reply" class="form-control textarea-reply" style="resize: none;"></textarea>
+                            <div align="right">
+                              <button type="submit" class="btn btn-success basic-btn" name="comment-relpy">작성</button>
+                            </div>
+                          </div>
+                        </form>
+                      </li> -->
+  
+                    </ul>
+                    </dvi>
+                    <script>
+                      var fn_reply = $(".btn-reply").one('click', function(e) {
+                        // <% if(memberLoggedIn!=null) { %>
+                        //화면에 출력될 답글 입력창 만들기
+                        var li = $("<li id='comment-reply'></li>"); //태그생성
+                        var html = "<div class='col-xs-12' align='right'>";
+                        html += '<form action="#" method="post">';
+                        html += "<input type='hidden' name='name부여' value='속성부여'/>";
+                        html += "<input type='hidden' name='name부여' value='속성부여'/>";
+                        html += "<input type='hidden' name='name부여' value='속성부여'/>";
+                        html += "<input type='hidden' name='name부여' value='" + $(this).val() + "'/>";
+                        html += " ↴<textarea id='textarea-reply' class='form-control' style='resize: none;'></textarea>";
+                        html += "<button type='submit' class='btn btn-success'>등록</button>&nbsp;";
+                        html += "<button type='reset' class='btn btn-success'>취소</button>";
+                        html += "</form></div>";
+                        //위에서 작성한 html구문을li변수 text노드에 삽입
+                        li.html(html);
+                        //작성된 lir태그(객체)를 원본 html구문의
+                        //(li class=leve1)뒤에 삽입
+                        li.insertAfter($(this).parent().parent().parent().parent().parent().parent()).children("li").slideDown(500);
+                        return li;
+                      });
+                      $(".btn-cancel").one('click', function(e) {
+                        $("#comment-reply").detach();
+                      });
+                    </script>
+  
+                  </div>
+  
+                </div>
+              </div>
+  
+            </div>
+          </div>
+  
+  
+          <div class="col-md-4 col-md-offset-1">
+            <div class="row">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title truck-panel-header">푸드트럭 상세 정보</h3>
+                </div>
+                <div class="panel-body">
+                  <img id="truck-location" class="card-img-top img-responsive center-block" src="http://proxyprivat.com/images/noimage.jpeg" alt="Card image cap" width=300 height=300>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <p>상세 위치 : </p>
+                  <br>
+                  <p>오픈시간 : </p>
+                  <br>
+                  <p>주요 동선 : </p>
+                  <br>
+                  <p>휴무일 : </p>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ 
+
+
+
+
+   <!-- Footer -->
+   <footer id="footer" class="container">
+    <div class="row 200%">
+      <div class="12u">
+        <!-- Contact -->
+        <section>
+          <h2 class="major"><span>Get in touch</span></h2>
+          <ul class="contact">
+            <li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
+            <li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+            <li><a class="icon fa-instagram" href="#"><span class="label">Instagram</span></a></li>
+            <li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+            <li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul class="menu">
+        <li>&copy; Untitled. All rights reserved</li>
+        <li>Design by: semiproject</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/nav-tabs.css">
+    <link rel="stylesheet" href="css/customer.css">
+    <link rel="stylesheet" href="css/footer.css">
+  
+    
+    
+    <script src='http://code.jquery.com/jquery-3.1.1.min.js'></script>
+    <script src='js/bootstrap.js'></script>
+ 
+    <style>
+        #event-input-img {
+          position: relative;
+          width: 94%;
+          cursor: pointer;
+          display: inline;
+          margin: 0;
+        }
+        .upload {
+          width: 94%;
+          opacity: 0;
+          position: relative;
+          display: inline;
+        }
+        .event-img-replace{
+          display: inline-block;
+          position: absolute;
+          width: 90%;
+          height: 20;
+          border-radius: 3px;
+          border-color: transparent;
+          background: green;
+          color: #fff;
+          cursor: pointer;
+        }
+        .event-check-img {
+          margin: 0px;
+        }
+       
+  
+            @media(max-width:1199px) {
+          /*해상도가 작을 때 드랍다운 아이템에 마우스를 올렸을때*/
+       
+          .event-img-replace{
+            width: 87%;
+          }
+      
+        }
+        @media(max-width:991px) {
+          /*해상도가 작을 때 드랍다운 아이템에 마우스를 올렸을때*/
+          .event-img-replace{
+            width: 100%;
+            height: 20;
+          }
+          .event-img-replace{
+            width: 84%;
+          }
+          #event-check-img{
+            height: 150px;
+          }
+       
+        }
+        @media(max-width:700px) {
+          /*세부적 해도되고 안해도됨*/
+        }
+        @media(max-width:480px) {
+          /*해상도가 작을 때 드랍다운 아이템에 마우스를 올렸을때*/
+          .event-img-replace {
+            width: 94%;
+            height: 20;
+          }
+        
+          #event-check-img{
+            width: 129%;
+            height: 150px;
+          }
+        }
+          @media(max-width:480px) {
+          /*해상도가 작을 때 드랍다운 아이템에 마우스를 올렸을때*/
+          .event-img-replace {
+            width: 94%;
+            height: 20;
+          }
+       
+          #event-check-img{
+            width: 129%;
+            height: 130px;
+          }
+  
+        }
+      
+    </style>
+
+    <title>관리자페이지 이벤트 등록</title>
+</head>
+<body>
+    
+  <nav class="navbar ">
+    <div class="container-fluid navbar-background-color">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+         <div class="logo">
+          <a class="navbar-brand" href="Main.html">HOME</a>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-background-color" id='bs-example-navbar-collapse-1'>
+        <ul class="nav navbar-nav">
+          <li><a href="Intro.html">소개<span class-'sr-only'></span></a></li>
+          <li><a href="Store.html">STORE</a></li>
+          <li><a href="Event.html">EVENT</a></li>
+          <li><a href="Customer.html">고객센터</a></li>
+          <li><a href="MyPage_Event.html">마이페이지</a></li>
+          <li><a href="Admin_StoreOwner_Management.html">개발자영역</a></li>
+        </ul>
+
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <select class="form-control" name="">
+              <option value="">지역명</option>
+              <option value="">음식명</option>
+              <option value="">상호명</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="음식명/상호명을 입력하세요">
+          </div>
+          <button type="submit" class="btn btn-default">검색</button>
+        </form>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="Main.html"><span class="glyphicon glyphicon-log-in"></span>로그아웃</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  <section>
+        <div class='container'>
+            <div class="panel">
+              
+                <ul class="nav nav-tabs">
+                  <li   role="presentation"><a href="Admin_StoreOwner_Management.html">점주관리</a></li>
+                  <li class="active" role="presentation"><a href="Admin_Event.html">이벤트</a></li>
+                  <li  role="presentation"><a href="Admin_StoreEnroll.html">점포가입신청</a></li>
+                  <li role="presentation"><a href="Admin_One.html">1대1문의</a></li>
+                </ul>
+
+                     <div class="panel-body">
+                            <div class="page-header">
+                                    <h2> 이벤트 등록/수정</h2>
+                            </div>
+                            <form class="form-horizontal">
+                                    
+                                    <div class="form-group">
+                                      <label class="col-sm-3 control-label" for="">작성자 </label>
+                                    <div class="col-sm-6">
+                                      <input class="form-control" type="text" placeholder="아이디" width="100">
+                                    </div>
+                                    </div>
+        
+                                    
+                                  <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="">제목 </label>
+                                      <div class="col-sm-6">
+                                        <input class="form-control" type="text" placeholder="제목을 입력하세요.">
+                                      </div>
+                                    </div>
+        
+                                    <div class="form-group">
+                                       
+                                        <label for="" class="col-sm-3 control-label">내 용 </label>
+                                        <div class="col-sm-6">
+                                                <textarea class="form-control" rows="13" style="resize: none;"></textarea>
+                                        </div>
+                                    
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-xs-3 control-label">사진등록 </label>
+                                        <div class="col-xs-1"></div>
+                                        <div class="col-xs-3">
+                                          <img id='event-check-img' src="http://proxyprivat.com/images/noimage.jpeg" alt="Card image cap" width=100% height=100>
+                                          <br>
+                                          <div class="">
+                                          </div>
+                                          <button class="event-img-replace">사진등록</button>
+                                          <input id='event-input-img' type="file" value="사진등록" class="upload" accept="image/gif, image/jpeg, image/png" name='truck-img'>
+                                        </div>
+                          
+                                      </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="form-group">
+                                          <div class="col-sm-12 text-center">
+                                            <button class="btn btn-primary" type="submit">제출하기<i class="fa fa-check spaceLeft"></i></button>
+                                            <button class="btn btn-danger" type="submit">취소<i class="fa fa-times spaceLeft"></i></button>
+                                          </div>
+                                        </div>
+                                      </div>
+                            </form>
+                           
+                        </div>
+            </div>
+        </div>
+    </section>
+    
+   <!-- Footer -->
+   <footer id="footer" class="container">
+    <div class="row 200%">
+      <div class="12u">
+        <!-- Contact -->
+        <section>
+          <h2 class="major"><span>Get in touch</span></h2>
+          <ul class="contact">
+            <li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
+            <li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+            <li><a class="icon fa-instagram" href="#"><span class="label">Instagram</span></a></li>
+            <li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+            <li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul class="menu">
+        <li>&copy; Untitled. All rights reserved</li>
+        <li>Design by: semiproject</li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

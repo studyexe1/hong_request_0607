@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/nav-tabs.css">
+  <link rel="stylesheet" href="css/customer.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  
+  
+  <script src='http://code.jquery.com/jquery-3.1.1.min.js'></script>
+  <script src='js/bootstrap.js'></script>
+  <style>
+   
+
+
+  </style>
+
+
+    <title>관리자페이지 점포가입 신청정보</title>
+</head>
+<body>
+    
+  <nav class="navbar ">
+    <div class="container-fluid navbar-background-color">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+         <div class="logo">
+          <a class="navbar-brand" href="Main.html">HOME</a>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-background-color" id='bs-example-navbar-collapse-1'>
+        <ul class="nav navbar-nav">
+          <li><a href="Intro.html">소개<span class-'sr-only'></span></a></li>
+          <li><a href="Store.html">STORE</a></li>
+          <li><a href="Event.html">EVENT</a></li>
+          <li><a href="Customer.html">고객센터</a></li>
+          <li><a href="MyPage_Event.html">마이페이지</a></li>
+          <li><a href="Admin_StoreOwner_Management.html">개발자영역</a></li>
+        </ul>
+
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <select class="form-control" name="">
+              <option value="">지역명</option>
+              <option value="">음식명</option>
+              <option value="">상호명</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="음식명/상호명을 입력하세요">
+          </div>
+          <button type="submit" class="btn btn-default">검색</button>
+        </form>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="Main.html"><span class="glyphicon glyphicon-log-in"></span>로그아웃</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  <section>
+        <div class='container'>
+            <div class="panel">
+              
+                <ul class="nav nav-tabs">
+                  <li  role="presentation"><a href="Admin_StoreOwner_Management.html">점주관리</a></li>
+                  <li role="presentation"><a href="Admin_Event.html">이벤트</a></li>
+                  <li  class="active" role="presentation"><a href="Admin_StoreEnroll.html">점포가입신청</a></li>
+                  <li role="presentation"><a href="Admin_One.html">1대1문의</a></li>
+                </ul>
+
+                <div class="panel-body">
+                        <br>
+                        <br>
+                        <h2>점주 정보</h2>
+                        <br>
+                       
+
+                        
+                        <div class="row">
+                                <div class="col-xs-3">
+                                   <p>사업자 번호  </p> 
+                                </div>
+                                <div class="col-xs-9">
+                                    <p>받아온 사업자 번호</p>
+                                </div>
+                            </div>
+                            <hr> 
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <p>대표자 이름  </p>
+                                </div>
+                                <div class="col-xs-9">
+                                    <p>받아온 대표자 이름</p>
+                                </div>
+                            </div>  
+                            <hr>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <p>휴대폰 번호  </p>
+                                </div>
+                                <div class="col-xs-9">
+                                    <p>받아온 휴대폰 번호</p>
+                                </div>
+                            </div>
+                            <hr>
+    
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <p>상호명  </p>
+                                </div>
+                                <div class="col-xs-9">
+                                    <p>받아온 상호명</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <p>업종카테고리  </p>
+                                </div>
+                                <div class="col-xs-9">      
+                                     <p>받아온 업종 카테고리</p>   
+                                </div>
+                            </div>  
+                            <br><br>
+                </div>
+                <div class="row">
+                        <div class="form-group">
+                                <div class="col-sm-12 text-center">
+                                  <button class="btn btn-primary" type="submit">승인<i class="fa fa-check spaceLeft"></i></button>
+                                  <button class="btn btn-danger" type="submit">승인거부<i class="fa fa-times spaceLeft"></i></button>
+                                </div>
+                              </div>
+             </div>
+             <br>
+             <div class='row'>   
+                    
+                    <div class="col-xs-3">
+                    <button class="btn btn-default center-block"><a href="Admin_StoreEnroll.html">목록</a></button>          
+                </div>
+                <div class="col-xs-9"></div>
+             </div>
+             <br><br>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer id="footer" class="container">
+      <div class="row 200%">
+        <div class="12u">
+          <!-- Contact -->
+          <section>
+            <h2 class="major"><span>Get in touch</span></h2>
+            <ul class="contact">
+              <li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
+              <li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+              <li><a class="icon fa-instagram" href="#"><span class="label">Instagram</span></a></li>
+              <li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+              <li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul class="menu">
+          <li>&copy; Untitled. All rights reserved</li>
+          <li>Design by: semiproject</li>
+        </ul>
+      </div>
+    </footer>
+</body>
+</html>
